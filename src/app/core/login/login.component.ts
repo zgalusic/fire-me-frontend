@@ -8,9 +8,7 @@ import { LoginService } from '../login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  public username: string;
-  public password: string;
+  public credentials = {username: '', password: ''};
 
   constructor( private router: Router, private loginService: LoginService ) { }
 
@@ -19,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   login(): void {
 
-    if (this.username === 'admin' && this.password === 'admin') {
+    if (this.credentials.username === 'admin' && this.credentials.password === 'admin') {
       this.loginService.setUserLoggedIn();
       this.router.navigate(['dashboard']);
     }
