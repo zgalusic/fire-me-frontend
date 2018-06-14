@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from '../login.service';
+import {AuthService} from '../auth.service';
+import {User} from '../model/user';
 
 @Component({
   selector: 'app-login',
@@ -10,18 +11,32 @@ import { LoginService } from '../login.service';
 export class LoginComponent implements OnInit {
   public credentials = {username: '', password: ''};
 
-  constructor( private router: Router, private loginService: LoginService ) { }
+  private user: User;
+  private headers: string[];
 
-  ngOnInit() {
-  }
+  constructor( private router: Router, private authService: AuthService ) { }
+
+  ngOnInit() { }
 
   login(): void {
 
-    if (this.credentials.username === 'admin' && this.credentials.password === 'admin') {
-      this.loginService.setUserLoggedIn();
+    this.authService.authenticate(this.credentials.username, this.credentials.password)
+      .subscribe(resp => {
+          const keys = resp.headers.keys();
+          this.headers = keys.map(key => `${key}: ${resp.headers.get(key)}`)
+          this.user = {...resp.body};
+          this.success();
+      });
+  }
+
+  success(): void {
+    console.log(this.headers);
+
+    if (this.user && this.user.eMail === this.credentials.username) {
+      console.log(this.user);
+      this.authService.setAuthenticated(true);
       this.router.navigate(['dashboard']);
     }
-
   }
 
 }
