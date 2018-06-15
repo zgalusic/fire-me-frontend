@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {UserService} from './user.service';
 import {AuthService} from './auth.service';
 import {NavigationComponent} from './navigation/navigation.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import {NavigationComponent} from './navigation/navigation.component';
     NotFoundComponent,
     LoginComponent,
     DashboardComponent,
-    NavigationComponent
+    NavigationComponent,
+    UsersComponent
   ],
   exports: [
     HeaderComponent,
