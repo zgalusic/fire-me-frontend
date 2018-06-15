@@ -11,6 +11,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {HttpClientModule} from '@angular/common/http';
 import {UserService} from './user.service';
 import {AuthService} from './auth.service';
+import {NavigationComponent} from './navigation/navigation.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import {AuthService} from './auth.service';
     FooterComponent,
     NotFoundComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavigationComponent
   ],
   exports: [
     HeaderComponent,
