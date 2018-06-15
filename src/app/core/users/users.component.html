@@ -1,24 +1,28 @@
 <div style="margin-top: 60px" class="container">
 
-  <div class="row" *ngFor="let user of users">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">First name</th>
 
-    <div class="col-md-3">
-      {{user.firstName}}
-    </div>
+        <th scope="col">Last name</th>
 
-    <div class="col-md-3">
-      {{user.lastName}}
-    </div>
+        <th scope="col">eMail</th>
 
-    <div class="col-md-3">
-      {{user.eMail}}
-    </div>
+        <th scope="col">Last update</th>
+      </tr>
+    </thead>
 
-    <div class="col-md-3">
-      {{user.lastUpdate}}
-    </div>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.eMail}}</td>
+        <td>{{user.lastUpdate | date: 'dd.MM.yyyy. HH:mm:ss'}}</td>
+      </tr>
+    </tbody>
+  </table>
 
-  </div>
 
 </div>
 
