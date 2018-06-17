@@ -22,7 +22,7 @@
       </tr>
     </tbody>
   </table>
-
+  <pagination [totalItems]="totalElements" [(ngModel)]="currentPage" [itemsPerPage]="pageSize" (pageChanged)="pageChanged($event)"></pagination>
 
 </div>
 

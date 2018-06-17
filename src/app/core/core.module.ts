@@ -13,13 +13,15 @@ import {UserService} from './user.service';
 import {AuthService} from './auth.service';
 import {NavigationComponent} from './navigation/navigation.component';
 import { UsersComponent } from './users/users.component';
+import {PaginationModule} from 'ngx-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
     CoreRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    PaginationModule.forRoot(),
   ],
   declarations: [
     HeaderComponent,
@@ -28,7 +30,7 @@ import { UsersComponent } from './users/users.component';
     LoginComponent,
     DashboardComponent,
     NavigationComponent,
-    UsersComponent
+    UsersComponent,
   ],
   exports: [
     HeaderComponent,
