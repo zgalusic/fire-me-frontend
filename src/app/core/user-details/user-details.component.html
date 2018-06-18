@@ -1,0 +1,15 @@
+<div class="container" style="margin-top: 120px">
+  <div class="row">
+    <div class="col-md-12">
+      <label>First name:</label>
+      <input [(ngModel)]="user.firstName" >
+    </div>
+
+    <div class="col-md-12">
+      <label>Last name:</label>
+      <input [(ngModel)]="user.lastName" >
+    </div>
+
+    <button (click)="updateUser()">Update</button>
+  </div>
+</div>
