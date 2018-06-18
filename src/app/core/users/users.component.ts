@@ -35,8 +35,6 @@ export class UsersComponent implements OnInit {
 
   pageChanged(event: PageChangedEvent) {
 
-    console.log(event);
-
     this.getUsers(event.page, event.itemsPerPage);
   }
 }
