@@ -14,6 +14,7 @@ import {AuthService} from './auth.service';
 import {NavigationComponent} from './navigation/navigation.component';
 import { UsersComponent } from './users/users.component';
 import {PaginationModule} from 'ngx-bootstrap';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import {PaginationModule} from 'ngx-bootstrap';
     DashboardComponent,
     NavigationComponent,
     UsersComponent,
+    UserDetailsComponent,
   ],
   exports: [
     HeaderComponent,
