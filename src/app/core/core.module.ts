@@ -15,6 +15,7 @@ import {NavigationComponent} from './navigation/navigation.component';
 import { UsersComponent } from './users/users.component';
 import {PaginationModule} from 'ngx-bootstrap';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     NavigationComponent,
     UsersComponent,
     UserDetailsComponent,
+    CreateUserComponent,
   ],
   exports: [
     HeaderComponent,
