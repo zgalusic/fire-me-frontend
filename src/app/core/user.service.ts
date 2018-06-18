@@ -40,4 +40,8 @@ export class UserService {
 
     return this.httpClient.put<User>(this.userUrl + '/users/' + user.id, user);
   }
+
+  public deleteUser(user: User): Observable<any> {
+    return this.httpClient.delete(this.userUrl + '/users/' + user.id);
+  }
 }

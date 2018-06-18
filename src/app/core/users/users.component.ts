@@ -37,4 +37,8 @@ export class UsersComponent implements OnInit {
 
     this.getUsers(event.page, event.itemsPerPage);
   }
+
+  deleteUser(user: User): void {
+    this.userService.deleteUser(user).subscribe(() => this.getUsers());
+  }
 }
