@@ -30,4 +30,14 @@ export class UserService {
 
     return this.httpClient.get<number>(this.userUrl + '/users/count');
   }
+
+  public getUser(userId: string): Observable<User> {
+
+    return this.httpClient.get<User>(this.userUrl + '/users/' + userId);
+  }
+
+  public updateUser(user: User): Observable<User> {
+
+    return this.httpClient.put<User>(this.userUrl + '/users/' + user.id, user);
+  }
 }
